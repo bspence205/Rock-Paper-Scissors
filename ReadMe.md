@@ -1,3 +1,3 @@
-Rock Paper Scissors Game
-
 Javascript Project
+
+Rock Paper Scissors Game Played in Console
