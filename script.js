@@ -1,26 +1,37 @@
-// component to randomly generate computers choice
+// component to randomly generate cpuChoice
 
 function computerPlay() {
-  let choice = Math.floor(Math.random() * 4);
-  if (choice == 1) {
+  cpuChoice = Math.floor(Math.random() * 3);
+  if (cpuChoice == 0) {
     console.log("Rock");
-  } else if (choice == 2) {
+  } else if (cpuChoice == 1) {
     console.log("Paper");
-  } else if (choice == 3) {
+  } else if (cpuChoice == 2) {
     console.log("Scissor");
   }
+  return cpuChoice;
 }
 
-// partial component for single round game
+// component for single round game
 
-const playerSection = "paper";
+const playerSelection = "Rock";
 const computerSelection = computerPlay();
-function singleRound(playerSection, computerSelection) {
-  if (playerSection == "rock") {
-    return "You Lose";
-  } else if (playerSection == "scissor") {
-    return "You Win";
+
+function playRound(playerSelection, computerSelection) {
+  if (computerSelection == 0) {
+    return "Draw, Rock respects Rock";
+  } else if (computerSelection == 2) {
+    return "Win, Rock dominates Scissor";
+  } else if (computerSelection == 1) {
+    return "Lost, Paper wrecks Rock";
   }
 }
 
-console.log(singleRound(playerSection, computerSelection));
+// component for user choice vs cpu choice. 5 rounds to determine winner who is declared in alert box.
+
+const userScore = 0;
+const cpuScore = 0;
+
+function game() {
+  for (i == 0; i <= 5; i++) {}
+}
