@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.container {
+  background-color: bisque;
+  text-align: center;
+  margin-top: 50%;
+}
+
+button {
+  margin-right: 30px;
+}
+
+.rockChoice {
+    background-color: rgb(218, 66, 66);
+    color: whitesmoke;
+    width: 25%;
+    font-weight: bold;
+}
+
+.paperChoice {
+    background-color: whitesmoke;
+    color: rgb(71, 65, 65);
+    width: 25%;
+    font-weight: bold;
+}
+
+.scissorChoice {
+    background-color: silver;
+    color: rgb(71, 65, 65);
+    width: 25%;
+    font-weight: bold;
+}

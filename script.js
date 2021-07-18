@@ -25,6 +25,7 @@ function playRound(playerSelection, computerSelection) {
   } else if (computerSelection == 1) {
     return "Lost, Paper wrecks Rock";
   }
+  return computerSelection;
 }
 
 // component for user choice vs cpu choice. 5 rounds to determine winner who is declared in alert box.
@@ -33,5 +34,11 @@ const userScore = 0;
 const cpuScore = 0;
 
 function game() {
-  for (i == 0; i <= 5; i++) {}
+  let userChoice = prompt("Enter your choice: Rock, Paper or Scissor");
+  playRound(`${userChoice}, computer`);
+  if (userScore == 5) {
+    console.log("You Won the Game!!");
+  } else if (cpuScore == 5) {
+    console.log("You Lost the Game!!");
+  }
 }
