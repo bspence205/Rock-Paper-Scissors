@@ -1,3 +1,10 @@
+// other cpuChoice
+
+function compPlay() {
+  let choices = ["rock", "paper", "scissors"];
+  return choices[Math.floor(Math.random() * choices.length)];
+}
+
 // component to randomly generate cpuChoice
 
 function computerPlay() {
@@ -12,12 +19,18 @@ function computerPlay() {
   return cpuChoice;
 }
 
-// component for single round game
+// other component for single round
 
-const playerSelection = "Rock";
+function pRound(pSelection) {
+  let compSelection = compPlay();
+  let result = "";
+}
+
+// component for single round game
+const playerSelection = ["Rock", "Paper", "Scissor"];
 const computerSelection = computerPlay();
 
-function playRound(playerSelection, computerSelection) {
+function playRound(playerChoice, computerSelection) {
   if (computerSelection == 0) {
     return "Draw, Rock respects Rock";
   } else if (computerSelection == 2) {
@@ -35,7 +48,6 @@ const cpuScore = 0;
 
 function game() {
   let userChoice = prompt("Enter your choice: Rock, Paper or Scissor");
-  playRound(`${userChoice}, computer`);
   if (userScore == 5) {
     console.log("You Won the Game!!");
   } else if (cpuScore == 5) {

@@ -10,32 +10,33 @@
 }
 
 .container {
-  background-color: bisque;
+  background-color: rgba(245, 222, 179, 0.267);
   text-align: center;
   margin-top: 50%;
 }
 
 button {
   margin-right: 30px;
+  cursor: grab;
 }
 
 .rockChoice {
-    background-color: rgb(218, 66, 66);
-    color: whitesmoke;
-    width: 25%;
-    font-weight: bold;
+  background-color: rgb(218, 66, 66);
+  color: whitesmoke;
+  width: 25%;
+  font-weight: bold;
 }
 
 .paperChoice {
-    background-color: whitesmoke;
-    color: rgb(71, 65, 65);
-    width: 25%;
-    font-weight: bold;
+  background-color: whitesmoke;
+  color: rgb(71, 65, 65);
+  width: 25%;
+  font-weight: bold;
 }
 
 .scissorChoice {
-    background-color: silver;
-    color: rgb(71, 65, 65);
-    width: 25%;
-    font-weight: bold;
+  background-color: silver;
+  color: rgb(71, 65, 65);
+  width: 25%;
+  font-weight: bold;
 }
