@@ -18,6 +18,7 @@
 button {
   margin-right: 30px;
   cursor: grab;
+  border-radius: 50px;
 }
 
 .rockChoice {

@@ -5,19 +5,13 @@ function compPlay() {
   return choices[Math.floor(Math.random() * choices.length)];
 }
 
-// component to randomly generate cpuChoice
-
-function computerPlay() {
-  cpuChoice = Math.floor(Math.random() * 3);
-  if (cpuChoice == 0) {
-    console.log("Rock");
-  } else if (cpuChoice == 1) {
-    console.log("Paper");
-  } else if (cpuChoice == 2) {
-    console.log("Scissor");
-  }
-  return cpuChoice;
+function disableButtons() {
+  buttons.forEach((elem) => {
+    elem.disabled = true;
+  });
 }
+
+const buttons = document.querySelectorAll("button");
 
 // other component for single round
 
@@ -73,9 +67,29 @@ function playRound(playerSelection) {
   return;
 }
 
+buttons.forEach((button) => {
+  button.addEventListener("click", function () {
+    playRound(button.value);
+  });
+});
+
+// component to randomly generate cpuChoice
+
+function computerPlay() {
+  cpuChoice = Math.floor(Math.random() * 3);
+  if (cpuChoice == 0) {
+    console.log("Rock");
+  } else if (cpuChoice == 1) {
+    console.log("Paper");
+  } else if (cpuChoice == 2) {
+    console.log("Scissor");
+  }
+  return cpuChoice;
+}
+
 // component for single round game
 const playerSelection = ["Rock", "Paper", "Scissor"];
-const computerSelection = computerPlay();
+const computerSelection = computerPlay;
 
 function pRound(playerChoice, computerSelection) {
   if (computerSelection == 0) {
@@ -90,8 +104,8 @@ function pRound(playerChoice, computerSelection) {
 
 // component for user choice vs cpu choice. 5 rounds to determine winner who is declared in alert box.
 
-const userScore = 0;
-const cpuScore = 0;
+let playerScore = 0;
+let computerScore = 0;
 
 function game() {
   let userChoice = prompt("Enter your choice: Rock, Paper or Scissor");
