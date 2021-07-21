@@ -1,4 +1,8 @@
-// other cpuChoice
+let playerScore = 0;
+let computerScore = 0;
+const buttons = document.querySelectorAll("input");
+
+// random cpuChoice
 
 function compPlay() {
   let choices = ["rock", "paper", "scissors"];
@@ -11,35 +15,33 @@ function disableButtons() {
   });
 }
 
-const buttons = document.querySelectorAll("button");
-
 // other component for single round
 
 function playRound(playerSelection) {
   let compSelection = compPlay();
   let result = "";
   if (
-    (playerSelection == "rock" && computerSelection == "scissors") ||
-    (playerSelection == "scissors" && computerSelection == "paper") ||
-    (playerSelection == "paper" && computerSelection == "rock")
+    (playerSelection == "rock" && compSelection == "scissors") ||
+    (playerSelection == "scissors" && compSelection == "paper") ||
+    (playerSelection == "paper" && compSelection == "rock")
   ) {
     playerScore += 1;
     result =
       "You Won! " +
       playerSelection +
       " beats " +
-      computerSelection +
+      compSelection +
       "<br><br>Player score: " +
       playerScore +
       "<br>Computer score: " +
-      computerScore;
+      compScore;
 
     if (playerScore == 5) {
       result += "<br><br>You won the game! Reload the page to play again";
     }
-  } else if (playerSelection == computerSelection) {
+  } else if (playerSelection == compSelection) {
     result =
-      "It's a draw. You both chose " +
+      "It's a draw. You both choose " +
       playerSelection +
       "<br><br>Player score: " +
       playerScore +
@@ -49,7 +51,7 @@ function playRound(playerSelection) {
     computerScore += 1;
     result =
       "You lost! " +
-      computerSelection +
+      compSelection +
       " beats " +
       playerSelection +
       "<br><br>Player score: " +
@@ -58,7 +60,8 @@ function playRound(playerSelection) {
       computerScore;
 
     if (computerScore == 5) {
-      result += "<br><br>I won the game! Reload the page and try harder";
+      result +=
+        "<br><br>I won the game! Be Better! Reload the page and try harder";
       disableButtons();
     }
   }
@@ -72,46 +75,3 @@ buttons.forEach((button) => {
     playRound(button.value);
   });
 });
-
-// component to randomly generate cpuChoice
-
-function computerPlay() {
-  cpuChoice = Math.floor(Math.random() * 3);
-  if (cpuChoice == 0) {
-    console.log("Rock");
-  } else if (cpuChoice == 1) {
-    console.log("Paper");
-  } else if (cpuChoice == 2) {
-    console.log("Scissor");
-  }
-  return cpuChoice;
-}
-
-// component for single round game
-const playerSelection = ["Rock", "Paper", "Scissor"];
-const computerSelection = computerPlay;
-
-function pRound(playerChoice, computerSelection) {
-  if (computerSelection == 0) {
-    return "Draw, Rock respects Rock";
-  } else if (computerSelection == 2) {
-    return "Win, Rock dominates Scissor";
-  } else if (computerSelection == 1) {
-    return "Lost, Paper wrecks Rock";
-  }
-  return computerSelection;
-}
-
-// component for user choice vs cpu choice. 5 rounds to determine winner who is declared in alert box.
-
-let playerScore = 0;
-let computerScore = 0;
-
-function game() {
-  let userChoice = prompt("Enter your choice: Rock, Paper or Scissor");
-  if (userScore == 5) {
-    console.log("You Won the Game!!");
-  } else if (cpuScore == 5) {
-    console.log("You Lost the Game!!");
-  }
-}

@@ -15,7 +15,14 @@
   margin-top: 50%;
 }
 
-button {
+ input {
+     padding: 5px;
+     border-radius: 50px;
+     margin-right: 2vh;
+ }
+
+
+input {
   margin-right: 30px;
   cursor: grab;
   border-radius: 50px;
